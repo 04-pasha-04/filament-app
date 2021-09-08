@@ -15,18 +15,20 @@
 }
 
 .filamentCard{
-    width: fit-content;
+    height: fit-content;
     display: grid;
-    max-width:240px;
+    max-height: min-content;
+    max-width:200px;
     align-items: center;
    
     
 }
 .addFilamentCard{
+
    display: grid;
    place-items: center;
-   width:240px;
-   height: 445px;
+   width: auto;
+   height: auto;
    cursor: pointer;
     
 }
@@ -40,6 +42,21 @@
 .cardProgress{
     margin-left: 10%;
     margin-top: 10%;
+}
+.material{
+    position: relative;
+    top: -67px;
+    left: -23px;
+    font-size: x-large;
+    text-align: center;
+    
+    
+}
+
+.diameter{
+    position: relative;
+    top: -35px;
+    left: 25px;
 }
 
 

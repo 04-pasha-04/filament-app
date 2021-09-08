@@ -15,9 +15,16 @@ interface material{
 
 export class FilamentsFormComponent{
 
-  selectedValue:any
+  selectedMaterial:any
 
-  materials: material[] = [
+  selectedDiameter:any
+
+  diameters = [
+    {value: 1.75},
+    {value: 2.85}
+  ]
+
+  materials = [
     {value : "PLA"},
     {value : "ABS"},
     {value : "PETG"},
@@ -37,12 +44,12 @@ export class FilamentsFormComponent{
   constructor(private db: AngularFireDatabase) { }
 
   filamentForm = new FormGroup({
-    name : new FormControl('', [Validators.minLength(3),Validators.required]),
-    brand : new FormControl('', [Validators.minLength(3),Validators.required]),
+    name : new FormControl('', [Validators.minLength(3),Validators.maxLength(15),Validators.required]),
+    brand : new FormControl('', [Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     material : new FormControl('',[Validators.required]),
-    weight : new FormControl('', [Validators.minLength(2),Validators.required]),
-    price : new FormControl('', [Validators.minLength(2),Validators.required]),
-    diameter : new FormControl('', [Validators.minLength(2),Validators.required]),
+    weight : new FormControl('', [Validators.minLength(2),Validators.maxLength(4),Validators.required]),
+    price : new FormControl('', [Validators.minLength(2),Validators.maxLength(5),Validators.required]),
+    diameter : new FormControl('', [Validators.required]),
     imageFile : new FormControl('', [Validators.minLength(3)]),
     
   })

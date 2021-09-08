@@ -22,8 +22,18 @@ class="filamentItem"
     <div class="progressAndButtons">
      <div>
      <mat-card-content class="cardProgress">
-       <mat-progress-spinner matTooltip="Amount of filament left" mode="determinate" value="{{item.weight / 10}}"></mat-progress-spinner>
-     </mat-card-content>
+      <mat-progress-spinner matTooltip="Amount of filament left" mode="determinate" value="{{item.weight / 10}}"></mat-progress-spinner>
+      
+      <div class="material">
+      {{item.material}}
+      </div>
+
+      <div class="diameter">
+      <img src="https://image.flaticon.com/icons/png/512/3487/3487400.png" height="16" width="16">
+      {{item.diameter}}
+      </div>
+
+    </mat-card-content>
      </div>
 
      <div>
