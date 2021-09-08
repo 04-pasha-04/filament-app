@@ -1,0 +1,47 @@
+.filamentForm{
+    justify-content: left;
+    display: flex;
+}
+
+
+.filamentItem{
+    display: flexbox;
+    padding: 10px;
+}
+.filamentsList{
+    display: flex;
+    flex-wrap:wrap;
+
+}
+
+.filamentCard{
+    width: fit-content;
+    display: grid;
+    max-width:240px;
+    align-items: center;
+   
+    
+}
+.addFilamentCard{
+   display: grid;
+   place-items: center;
+   width:240px;
+   height: 445px;
+   cursor: pointer;
+    
+}
+.addFilamentButton{
+    padding: 10px;
+}
+.progressAndButtons{
+    display: grid;
+    grid-template-columns: 95% 15%;
+}
+.cardProgress{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+
+
+

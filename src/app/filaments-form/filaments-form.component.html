@@ -1,0 +1,88 @@
+<div class="filamentForm">
+
+
+    <form [formGroup]="filamentForm"class="form-group" style="padding: 20px;" (ngSubmit)="add(filamentForm)" #filamentform>
+    
+    <div>
+      <mat-form-field>
+        <mat-label for="Filamentname" class="form-label">Filament display name</mat-label>
+        <input matInput formControlName="name" type="text" class="form-control" id="Filamentname" >
+        <mat-error *ngIf="filamentForm.controls['name'].touched && filamentForm.controls['name'].invalid">
+          <div *ngIf="filamentForm.controls['name'].errors?.required">This field is required!</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+      
+        
+    <div>
+      <mat-form-field>
+        <mat-label for="filamentbrand" class="form-label">Filament brand</mat-label>
+        <input matInput formControlName="brand" type="text" class="form-control" id="filamentbrand" >
+        <mat-error *ngIf="filamentForm.controls['brand'].touched && filamentForm.controls['brand'].invalid">
+          <div *ngIf="filamentForm.controls['brand'].errors?.required">This field is required!</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Material</mat-label>
+        <mat-select formControlName="material"[(value)]="selectedValue">
+          <mat-option *ngFor="let material of materials" [value]="material.value">
+            {{material.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+    </div>
+    
+    <div>
+      <mat-form-field>
+        <mat-label for="filamentweight" class="form-label">Filament weight</mat-label>
+        <input matInput formControlName="weight" type="number" class="form-control" id="filamentweight" >
+        <mat-error *ngIf="filamentForm.controls['weight'].touched && filamentForm.controls['weight'].invalid">
+          <div *ngIf="filamentForm.controls['weight'].errors?.required">This field is required!</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label for="filamentprice" class="form-label">Filament price</mat-label>
+        <input matInput formControlName="price" type="number" class="form-control" id="filamentprice" >
+        <mat-error *ngIf="filamentForm.controls['price'].touched && filamentForm.controls['price'].invalid">
+          <div *ngIf="filamentForm.controls['price'].errors?.required">This field is required!</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label for="filametdiameter" class="form-label">Filament diameter</mat-label>
+        <input matInput formControlName="diameter" type="number" class="form-control" id="filamentdiamter" >
+        <mat-error *ngIf="filamentForm.controls['diameter'].touched && filamentForm.controls['diameter'].invalid">
+          <div *ngIf="filamentForm.controls['diameter'].errors?.required">This field is required!</div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    
+      
+    <div class="input" style="width: 300px;">
+      <label for="FilamentImageFile" class="form-label">Filament image file</label>
+      <input formControlName="imageFile"type="file" class="form-control" id="FilamentImageFile">
+      <div class="alert alert-danger" *ngIf="filamentForm.controls['imageFile'].touched && filamentForm.controls['imageFile'].invalid">
+        <div *ngIf="filamentForm.controls['imageFile'].errors?.required">This field is required!</div>
+      </div>
+    
+    </div>
+
+
+    
+    <div style="padding-top: 10px;">
+      <button mat-raised-button color="primary" mat-dialog-close type="submit" [disabled]="!filamentForm.valid">Save</button>
+    </div>
+      
+    
+    </form>
+    
+    </div>

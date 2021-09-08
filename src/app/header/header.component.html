@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </button>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container" autosize style=" float:left;height:1080px; width: fit-content;">
+   
+   <mat-drawer #drawer class="example-sidenav" mode="side">
+       <mat-selection-list [multiple]="false">
+           <mat-list-option routerLink="printers">
+               Printers
+           </mat-list-option>
+
+           <mat-list-option routerLink="filaments">
+               Filaments
+           </mat-list-option>
+       </mat-selection-list>
+       
+   </mat-drawer>
+
+</mat-drawer-container>
