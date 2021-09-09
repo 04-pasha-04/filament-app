@@ -1,1 +1,14 @@
-<p>attach-spool works!</p>
+<div *ngFor="let item of items | async">
+    <mat-card>
+
+        <div>
+            <img *ngIf="item.imageFile" mat-card-image src="{{item.imageFile}}" >
+            <img *ngIf="(item.imageFile === '')" mat-card-image src="https://www.svgrepo.com/show/19622/3d-printer.svg" >
+        </div>
+
+        <mat-card-title>
+            {{item.name}}
+        </mat-card-title>
+
+    </mat-card>
+</div>

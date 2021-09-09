@@ -1,64 +1,76 @@
-.filamentForm{
-    justify-content: left;
+.filamentList{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
 }
-
 
 .filamentItem{
-    display: flexbox;
     padding: 10px;
-}
-.filamentsList{
-    display: flex;
-    flex-wrap:wrap;
-
-}
-
-.filamentCard{
-    height: fit-content;
-    display: grid;
-    max-height: min-content;
-    max-width:200px;
-    align-items: center;
-   
     
 }
-.addFilamentCard{
+.filamentCardDiv{
+    display: flexbox;
+    display: grid; 
+    grid-template-columns: 128px 1fr 1fr;
+    grid-template-rows: 128px 1fr 1fr;
 
-   display: grid;
-   place-items: center;
-   width: auto;
-   height: auto;
-   cursor: pointer;
-    
+    grid-template-areas:
+    "picture ...... spinner"
+    "...... ...... material"
+    "...... ...... weight"
+    "title ...... diameter"
+    "brand occupation buttons" ;
 }
+.cardPicture{
+    padding: 5px;
+    width: 128px;
+    border:1px black;
+    grid-area: picture;
+}
+.cardTitle{
+    grid-area: title;
+    text-overflow: clip;
+}
+.cardSpinner{
+    grid-area: spinner;
+}
+.cardButtons{
+    grid-area: buttons;
+    position: relative;
+    right: -75px;
+}
+.cardDiameter{
+    grid-area: diameter;
+    position: relative;
+    right: -30px;
+    top: -30px;
+}
+.cardMaterial{
+    position:relative;
+    top: -95px;
+    text-align: center;
+    grid-area: material;
+    font-size: x-large;
+}
+.cardWeight{
+    grid-area: weight;
+    position: relative;
+    right: -30px;
+    top: -30px;
+}
+.cardBrand{
+    grid-area: brand;
+
+}
+
+
 .addFilamentButton{
     padding: 10px;
-}
-.progressAndButtons{
-    display: grid;
-    grid-template-columns: 95% 15%;
-}
-.cardProgress{
-    margin-left: 10%;
-    margin-top: 10%;
-}
-.material{
+    cursor: pointer;
+    display: flexbox;
     position: relative;
-    top: -67px;
-    left: -23px;
-    font-size: x-large;
-    text-align: center;
-    
-    
+    top: 110px;
+   
 }
-
-.diameter{
-    position: relative;
-    top: -35px;
-    left: 25px;
-}
-
-
 
 

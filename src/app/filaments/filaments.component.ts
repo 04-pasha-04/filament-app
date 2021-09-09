@@ -8,6 +8,8 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { EventEmitter } from '@angular/core';
 import { FilamentsFormComponent } from '../filaments-form/filaments-form.component';
 import { EditSpoolComponent } from '../edit-spool/edit-spool.component';
+import { AttachSpoolComponent } from '../attach-spool/attach-spool.component';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -25,7 +27,7 @@ export class FilamentsComponent {
   itemsRef: AngularFireList<any>
   @Output() data = new EventEmitter()
 
-  constructor(private db : AngularFireDatabase, private dialog: MatDialog){
+  constructor(private db : AngularFireDatabase, private dialog: MatDialog, private dn : DataService){
 
     this.itemsRef = db.list('/filaments')
     this.items = this.itemsRef.snapshotChanges().pipe(
@@ -40,7 +42,7 @@ export class FilamentsComponent {
 
   updateRoll(key:any){
     
-    this.data.emit(key)
+    this.dn.setId(key)
     const dialogRef = this.dialog.open(EditSpoolComponent);
     
   }
@@ -54,6 +56,10 @@ export class FilamentsComponent {
 
   addRoll(){
     const dialogRef = this.dialog.open(FilamentsFormComponent);
+  }
+
+  attachRoll(){
+    const dialogRef = this.dialog.open(AttachSpoolComponent)
   }
   
  

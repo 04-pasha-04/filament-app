@@ -23,6 +23,18 @@
         </mat-error>
       </mat-form-field>
     </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Material</mat-label>
+        <mat-select formControlName="material"[(value)]="selectedMaterial">
+          <mat-option *ngFor="let material of materials" [value]="material.value">
+            {{material.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+    </div>
     
     <div>
       <mat-form-field>
@@ -45,10 +57,14 @@
     </div>
 
     <div>
-      <mat-form-field>
-        <mat-label for="filametdiameter" class="form-label">Filament diameter</mat-label>
-        <input matInput formControlName="diameter" type="number" class="form-control" id="filamentdiamter" >
-        <mat-error *ngIf="filamentForm.controls['diameter'].touched && filamentForm.controls['diameter'].invalid">
+    <mat-form-field>
+        <mat-label>Diameter</mat-label>
+        <mat-select formControlName="diameter"[(value)]="selectedDiameter">
+          <mat-option *ngFor="let diameter of diameters" [value]="diameter.value">
+            {{diameter.value}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="filamentForm.controls['weight'].touched && filamentForm.controls['weight'].invalid">
           <div *ngIf="filamentForm.controls['diameter'].errors?.required">This field is required!</div>
         </mat-error>
       </mat-form-field>

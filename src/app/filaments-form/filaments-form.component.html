@@ -64,6 +64,9 @@
             {{diameter.value}}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="filamentForm.controls['weight'].touched && filamentForm.controls['weight'].invalid">
+          <div *ngIf="filamentForm.controls['diameter'].errors?.required">This field is required!</div>
+        </mat-error>
       </mat-form-field>
     </div>
     

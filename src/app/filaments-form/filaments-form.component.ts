@@ -44,7 +44,7 @@ export class FilamentsFormComponent{
   constructor(private db: AngularFireDatabase) { }
 
   filamentForm = new FormGroup({
-    name : new FormControl('', [Validators.minLength(3),Validators.maxLength(15),Validators.required]),
+    name : new FormControl('', [Validators.minLength(3),Validators.maxLength(25),Validators.required]),
     brand : new FormControl('', [Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     material : new FormControl('',[Validators.required]),
     weight : new FormControl('', [Validators.minLength(2),Validators.maxLength(4),Validators.required]),
