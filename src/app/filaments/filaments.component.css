@@ -11,8 +11,8 @@
 .filamentCardDiv{
     display: flexbox;
     display: grid; 
-    grid-template-columns: 128px 1fr 1fr;
-    grid-template-rows: 128px 1fr 1fr;
+    grid-template-columns: 128px 1fr;
+    grid-template-rows: 60px 1fr;
 
     grid-template-areas:
     "picture ...... spinner"
@@ -43,11 +43,11 @@
     grid-area: diameter;
     position: relative;
     right: -30px;
-    top: -30px;
+    
 }
 .cardMaterial{
     position:relative;
-    top: -95px;
+    top: -24px;    
     text-align: center;
     grid-area: material;
     font-size: x-large;
@@ -55,8 +55,9 @@
 .cardWeight{
     grid-area: weight;
     position: relative;
+    top: 5px;
     right: -30px;
-    top: -30px;
+    
 }
 .cardBrand{
     grid-area: brand;

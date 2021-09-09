@@ -1,1 +1,25 @@
-<p>printers works!</p>
+<div class="printersList">
+<div 
+*ngFor="let item of items | async"
+class="printersItem"
+>
+    <div>
+    <mat-card class="printerCard">
+
+        <div class="cardImage">
+            <img *ngIf="item.imageFile" mat-card-image src="{{item.imageFile}}" >
+            <img *ngIf="(item.imageFile === '')" mat-card-image src="https://www.svgrepo.com/show/19622/3d-printer.svg" >
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div>
+        <mat-card-title class="cardTitle">
+            {{item.name}}
+        </mat-card-title>
+        </div>
+
+    </mat-card>
+    </div>
+</div>
+</div>

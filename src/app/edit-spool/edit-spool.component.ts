@@ -1,12 +1,9 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireObject} from '@angular/fire/database';
-import { FilamentsComponent } from '../filaments/filaments.component';
-import { BehaviorSubject } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { Observable } from 'rxjs';
-import { AngularFireList } from '@angular/fire/database';
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
+
 
 @Component({
   selector: 'app-edit-spool',
@@ -18,14 +15,29 @@ export class EditSpoolComponent implements OnInit{
 
    key:any
    itemRef: Observable<any>
-   itemObj:any
+   itemObj:any = {}
    
    ngOnInit(){
     this.key = this.dn.data
     this.itemRef = this.db.object('filaments/'+this.key).valueChanges()
     this.itemRef.subscribe(x => {
       this.itemObj = x
+      
+      console.log(this.itemObj.name)
+
+      this.filamentForm.setValue(
+      {
+        name:this.itemObj.name,
+        brand:this.itemObj.brand,
+        material:this.itemObj.material,
+        weight:this.itemObj.weight,
+        price:this.itemObj.price,
+        diameter:this.itemObj.diameter,
+        imageFile:this.itemObj.imageFile
+      })
+      
     })
+    
     }
     
 
@@ -55,11 +67,11 @@ export class EditSpoolComponent implements OnInit{
      {value : "WOOD"},
    ]
 
-  
+   
    
   filamentForm = new FormGroup({
 
-    name : new FormControl('', [Validators.minLength(3),Validators.maxLength(25),Validators.required]),
+    name : new FormControl(this.itemObj.name, [Validators.minLength(3),Validators.maxLength(25),Validators.required]),
     brand : new FormControl('', [Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     material : new FormControl('',[Validators.required]),
     weight : new FormControl('', [Validators.minLength(2),Validators.maxLength(4),Validators.required]),
@@ -69,7 +81,9 @@ export class EditSpoolComponent implements OnInit{
     
   })
   
-  edit(filament:any){}
-
+  edit(filament:any){
+    this.db.list('filaments/').set(this.key, filament.value)
+  }
+  
 
 }
