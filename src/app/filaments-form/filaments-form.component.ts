@@ -3,9 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { FilamentsComponent } from '../filaments/filaments.component';
 
-interface material{
-  value : string
-}
+
 
 @Component({
   selector: 'app-filaments-form',

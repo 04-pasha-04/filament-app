@@ -39,7 +39,7 @@
     <div>
       <mat-form-field>
         <mat-label for="filamentweight" class="form-label">Filament weight</mat-label>
-        <input matInput formControlName="weight" type="number" class="form-control" id="filamentweight" >
+        <input inputmode=”numeric” matInput formControlName="weight" type="number" class="form-control" id="filamentweight" >
         <mat-error *ngIf="filamentForm.controls['weight'].touched && filamentForm.controls['weight'].invalid">
           <div *ngIf="filamentForm.controls['weight'].errors?.required">This field is required!</div>
         </mat-error>
@@ -48,8 +48,8 @@
 
     <div>
       <mat-form-field>
-        <mat-label for="filamentprice" class="form-label">Filament price</mat-label>
-        <input matInput formControlName="price" type="number" class="form-control" id="filamentprice" >
+        <mat-label for="filamentprice" class="form-label">Filament price €</mat-label>
+        <input inputmode=”numeric” matInput formControlName="price" type="number" class="form-control" id="filamentprice" >
         <mat-error *ngIf="filamentForm.controls['price'].touched && filamentForm.controls['price'].invalid">
           <div *ngIf="filamentForm.controls['price'].errors?.required">This field is required!</div>
         </mat-error>

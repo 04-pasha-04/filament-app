@@ -42,7 +42,7 @@ export class FilamentsComponent {
 
   updateRoll(key:any){
     
-    this.dn.setId(key)
+    this.dn.setData(key)
     const dialogRef = this.dialog.open(EditSpoolComponent);
     
   }
@@ -58,7 +58,9 @@ export class FilamentsComponent {
     const dialogRef = this.dialog.open(FilamentsFormComponent);
   }
 
-  attachRoll(){
+  attachRoll(data:any){
+    this.dn.setData(data)
+    
     const dialogRef = this.dialog.open(AttachSpoolComponent)
   }
   

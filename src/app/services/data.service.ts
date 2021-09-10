@@ -7,10 +7,13 @@ import { BehaviorSubject } from 'rxjs';
 export class DataService {
 
   data:any
+ 
 
   constructor() { }
 
-  setId(id:string){
-    this.data = id
+  setData(_data:any){
+    this.data = _data
+    
+
   }
 }

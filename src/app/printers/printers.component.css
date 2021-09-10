@@ -3,13 +3,17 @@
     flex-wrap: wrap;
 }
 .printersItem{
-    
     padding: 10px;
 }
+.printersItem:hover{
+    transition: all 0.2s ease ;
+    transform: scale(1.05);
+}
+
 .printerCard{
     
     display: flexbox;
-    max-width: fit-content;
+    min-width: fit-content;
 }
 .cardImage{
     max-width: 128px;

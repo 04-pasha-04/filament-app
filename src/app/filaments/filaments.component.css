@@ -8,24 +8,31 @@
     padding: 10px;
     
 }
+.filamentItem:hover{
+    padding: 10px;
+    transition: all 0.2s ease ;
+    transform: scale(1.05);
+    
+}
+
 .filamentCardDiv{
     display: flexbox;
     display: grid; 
     grid-template-columns: 128px 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 100px 1fr 1fr;
 
     grid-template-areas:
     "picture ...... spinner"
     "...... ...... material"
-    "...... ...... weight"
-    "title ...... diameter"
-    "brand occupation buttons" ;
+    "title ...... weight"
+    "brand ...... diameter"
+    "printer occupation buttons" ;
 }
 .cardPicture{
     padding: 5px;
     width: 128px;
-    border:1px black;
     grid-area: picture;
+
 }
 .cardTitle{
     grid-area: title;
@@ -47,7 +54,7 @@
 }
 .cardMaterial{
     position:relative;
-    top: -24px;    
+    top: -66px;    
     text-align: center;
     grid-area: material;
     font-size: x-large;
@@ -64,14 +71,18 @@
 
 }
 
+.printer{
+    grid-area: printer;
+    color: red;
+    position: relative;
+    top: 20px;
+}
 
 .addFilamentButton{
     padding: 10px;
     cursor: pointer;
     display: flexbox;
     position: relative;
-    top: 110px;
-   
 }
 
 
